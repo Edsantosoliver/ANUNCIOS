@@ -1,103 +1,95 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Swiper com PDF</title>
-  <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
-  <style>
-    html, body {
-      height: 100%;
-      margin: 0;
-      padding: 0;
-    }
+  <head>
+    <meta charset="utf-8" />
+    <title>Swiper demo</title>
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1"
+    />
 
-    body {
-      background: #eee;
-      font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
-      font-size: 14px;
-      color: #000;
-    }
+    <style>
+      html,
+      body {
+        position: relative;
+        height: 100%;
+        margin: 0;
+        padding: 0;
+      }
 
-    .swiper-container {
-      width: 100%;
-      height: 100%;
-    }
+      body {
+        background: #eee;
+        font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
+        font-size: 14px;
+        color: #000;
+      }
 
-    .swiper-slide {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      background: #fff;
-    }
+      swiper-container {
+        width: 100%;
+        height: 100%;
+      }
 
-    .swiper-slide iframe {
-      width: 100%;
-      height: 100%;
-      border: none; /* Remove a borda padrão do iframe */
-    }
+      swiper-slide {
+        text-align: center;
+        font-size: 18px;
+        background: #fff;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100%; /* Garante que o slide ocupe toda a altura */
+      }
 
-    .swiper-pagination {
-      position: absolute;
-      bottom: 10px;
-    }
+      swiper-slide iframe {
+        width: 24vw;
+        height: 90vh;
+        border: none; /* Remove a borda padrão do iframe */
+      }
+    </style>
+  </head>
 
-    .swiper-button-next,
-    .swiper-button-prev {
-      position: absolute;
-      top: 50%;
-      transform: translateY(-50%);
-      width: 30px;
-      height: 30px;
-      background-color: rgba(0, 0, 0, 0.5);
-      color: white;
-      border-radius: 50%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      cursor: pointer;
-    }
+  <body>
+    <swiper-container
+      class="mySwiper"
+      navigation="true"
+      pagination="true"
+      pagination-clickable="true"
+      keyboard="true"
+      slides-per-view="3"
+      ousewheel="true"
+      css-mode="true"
+    >
+      <!-- <swiper-container class="mySwiper" pagination="true" keyboard="true" pagination-clickable="true" slides-per-view="3" space-between="30"
+    free-mode="true"> -->
+      <swiper-slide>
+        <div class="swiper-slide">
+          <iframe
+            src="pdf/Presidente e Leitores Janeiro e Fevereiro.pdf"
+          ></iframe>
+        </div>
+      </swiper-slide>
 
-    .swiper-button-next {
-      right: 10px;
-    }
+      <swiper-slide>
+        <div class="swiper-slide">
+          <iframe
+            src="pdf/Campo e Limpeza Janeiro e Fevereiro 2025.pdf"
+          ></iframe>
+        </div>
+      </swiper-slide>
 
-    .swiper-button-prev {
-      left: 10px;
-    }
-  </style>
-</head>
-<body>
-  <div class="swiper-container">
-    <div class="swiper-wrapper">
-      <!-- Slide 1 com PDF incorporado -->
-      <div class="swiper-slide">
-        <iframe src="pdf/Campo e Limpeza Janeiro e Fevereiro 2025.pdf"></iframe>
-      </div>
-      <!-- Slide 2 com PDF incorporado -->
-      <div class="swiper-slide">
-        <iframe src="pdf/Discursos Janeiro e Fevereiro.pdf"></iframe>
-      </div>
-      <!-- Adicione mais slides conforme necessário -->
-    </div>
-    <!-- Adicione navegação se necessário -->
-    <div class="swiper-pagination"></div>
-    <div class="swiper-button-next"></div>
-    <div class="swiper-button-prev"></div>
-  </div>
+      <swiper-slide>
+        <div class="swiper-slide">
+          <iframe src="pdf/Discursos Janeiro e Fevereiro.pdf"></iframe>
+        </div>
+      </swiper-slide>
+      
+      <swiper-slide>Slide 4</swiper-slide>
+      <swiper-slide>Slide 5</swiper-slide>
+      <swiper-slide>Slide 6</swiper-slide>
+      <swiper-slide>Slide 7</swiper-slide>
+      <swiper-slide>Slide 8</swiper-slide>
+      <swiper-slide>Slide 9</swiper-slide>
+    </swiper-container>
 
-  <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
-  <script>
-    var swiper = new Swiper('.swiper-container', {
-      pagination: {
-        el: '.swiper-pagination',
-        clickable: true,
-      },
-      navigation: {
-        nextEl: '.swiper-button-next',
-        prevEl: '.swiper-button-prev',
-      },
-    });
-  </script>
-</body>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-element-bundle.min.js"></script>
+  </body>
 </html>
